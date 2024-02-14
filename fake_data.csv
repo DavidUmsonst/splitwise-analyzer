@@ -1,0 +1,25 @@
+Date,Description,Category,Cost,Currency,Person A,Person B
+
+2024-01-01,Fancy Hotel,Hotel,200,EUR,100,-100
+2024-01-02,Dinner,Dining out,30,USD,-15,15
+2024-01-03,Bus to new place,Bus/train,250,THB,125,-125
+2024-01-04,Cinema,Movies,500,THB,250,-250
+2024-01-05,Basic Hotel,Hotel,50,EUR,-25,25
+2024-01-06,Night out,Liquor,40,USD,-20,20
+2024-01-07,Supermarket,Groceries,380.00,THB,-190.00,190.00
+2024-01-08,Organized Trip,Entertainment - Other,1500,THB,-750,750
+2024-01-09,Car rental,Car,30,USD,15,-15
+2024-01-10,Train,Bus/train,500,THB,250,-250
+2024-01-10,Next Hotel,Hotel,45,EUR,22.5,-22.5
+2024-01-11,Concert,Music,500.00,THB,-250.00,250.00
+2024-01-11,Taxi home,Taxi,320.00,THB,160.00,-160.00
+2024-01-11,Travel Insurance,Insurance,100,EUR,50,-50
+2024-01-12,Bus trip,Bus/train,20,USD,-10,10
+2024-01-12,Lunch,Dining out,200,THB,100,-100
+2024-01-13,Hostel last night,Hotel,800.00,THB,400.00,-400.00
+2024-01-14,Fancy lunch,Dining out,50,USD,-25,25
+
+2024-01-14,Total balance, , ,EUR,147.5,-147.5
+2024-01-14,Total balance, , ,USD,-55,55
+2024-01-14,Total balance, , ,THB,95,-95
+

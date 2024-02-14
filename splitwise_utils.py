@@ -1,12 +1,19 @@
-import json, urllib.request
+from enum import Enum
+
+class sw_csv_columns(Enum):
+    DATE = 0
+    DESCRIPTION = 1
+    CATEGORY = 2
+    COST = 3
+    CURRENCY = 4
 
 def get_cost_currency_and_general_category(line):
     split_line = line.split(',')
-    cost = float(split_line[3]) 
-    currency = split_line[4]
-    category = split_line[2]
+    cost = float(split_line[sw_csv_columns.COST.value]) 
+    currency = split_line[sw_csv_columns.CURRENCY.value]
+    category = split_line[sw_csv_columns.CATEGORY.value]
     general_category = get_general_category(category)
-    date = split_line[0]
+    date = split_line[sw_csv_columns.DATE.value]
 
     return cost, currency, general_category, date
 

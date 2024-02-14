@@ -3,7 +3,7 @@ import splitwise_utils
 
 import matplotlib.pyplot as plt
 
-with open("./data.csv") as file:
+with open("./fake_data.csv") as file:
     lines = [line.rstrip() for line in file]
 
 days: list[splitwise_utils.Day] = list()
