@@ -36,5 +36,7 @@ Finally, one needs to edit the script `splitwise_analyzer.py` to add their API k
 
 Once this is done you can run the script from the command line or the IDE.
 
+> :exclamation: Currently, if there is a comma in the description, the parser of the `.csv` file will not work. 
+
 ## Currencybeacon API
 The current implementation uses the API from [Currencybeacon](https://currencybeacon.com/), which allows for 5000 API request per month in the free subscription as well as access to historical currency exchange rates.
