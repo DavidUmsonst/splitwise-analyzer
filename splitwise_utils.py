@@ -1,4 +1,5 @@
 from enum import Enum
+import csv
 import requests
 import ansitable
 
@@ -52,13 +53,12 @@ class Day:
     def get_expense_categories(self):
         return self._expense_category.keys()
 
-def get_cost_currency_and_general_category(line):
-    split_line = line.split(',')
-    cost = float(split_line[sw_csv_columns.COST.value]) 
-    currency = split_line[sw_csv_columns.CURRENCY.value]
-    category = split_line[sw_csv_columns.CATEGORY.value]
+def get_cost_currency_and_general_category(row):
+    cost = float(row[sw_csv_columns.COST.value]) 
+    currency = row[sw_csv_columns.CURRENCY.value]
+    category = row[sw_csv_columns.CATEGORY.value]
     general_category = get_general_category(category)
-    date = split_line[sw_csv_columns.DATE.value]
+    date = row[sw_csv_columns.DATE.value]
 
     return cost, currency, general_category, date
 
@@ -123,8 +123,11 @@ def get_total_expense_and_category_expenses(days: list[Day]):
 
 def get_days_with_expenses(file_path: str, api_key: str, desired_currency: str, use_latest_rates = True):
     
-    with open(file_path) as file:
-        lines = [line.rstrip() for line in file]
+    rows = []
+    with open(file_path, newline='') as file:
+        csv_reader = csv.reader(file, quotechar='"')
+        for row in csv_reader:
+            rows.append(row)
 
     days: list[Day] = list()
     if use_latest_rates:
@@ -132,12 +135,12 @@ def get_days_with_expenses(file_path: str, api_key: str, desired_currency: str, 
 
     counter_empty_lines = 0
 
-    for line in lines:
-        if not line.strip():
+    for row in rows:
+        if len(row) == 0:
             counter_empty_lines += 1
 
         elif counter_empty_lines == 1:
-            cost, currency, category, date = get_cost_currency_and_general_category(line)
+            cost, currency, category, date = get_cost_currency_and_general_category(row)
 
             if days == []:
                 if not use_latest_rates:
